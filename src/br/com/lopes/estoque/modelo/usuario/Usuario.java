@@ -1,4 +1,4 @@
-package br.com.caelum.estoque.modelo.usuario;
+package br.com.lopes.estoque.modelo.usuario;
 
 public class Usuario {
 

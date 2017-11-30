@@ -1,4 +1,4 @@
-package br.com.caelum.estoque.modelo.usuario;
+package br.com.lopes.estoque.modelo.usuario;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

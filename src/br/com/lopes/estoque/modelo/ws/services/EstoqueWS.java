@@ -1,11 +1,11 @@
-package br.com.caelum.estoque.modelo.ws.services;
+package br.com.lopes.estoque.modelo.ws.services;
 
 import java.util.List;
 
 import javax.jws.WebService;
 
-import br.com.caelum.estoque.modelo.item.Item;
-import br.com.caelum.estoque.modelo.item.ItemDao;
+import br.com.lopes.estoque.modelo.item.Item;
+import br.com.lopes.estoque.modelo.item.ItemDao;
 
 @WebService
 public class EstoqueWS {

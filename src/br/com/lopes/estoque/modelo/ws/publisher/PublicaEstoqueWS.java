@@ -1,8 +1,8 @@
-package br.com.caelum.estoque.modelo.ws.publisher;
+package br.com.lopes.estoque.modelo.ws.publisher;
 
 import javax.xml.ws.Endpoint;
 
-import br.com.caelum.estoque.modelo.ws.services.EstoqueWS;
+import br.com.lopes.estoque.modelo.ws.services.EstoqueWS;
 
 public class PublicaEstoqueWS {
 
