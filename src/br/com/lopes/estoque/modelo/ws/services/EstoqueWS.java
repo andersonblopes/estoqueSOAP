@@ -6,6 +6,7 @@ import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebResult;
 import javax.jws.WebService;
+import javax.xml.ws.RequestWrapper;
 import javax.xml.ws.ResponseWrapper;
 
 import br.com.lopes.estoque.modelo.item.Filtro;
@@ -19,6 +20,7 @@ public class EstoqueWS {
 	private ItemDao dao = new ItemDao();
 
 	@WebMethod(operationName = "allItens")
+	@RequestWrapper(localName = "listItens")
 	@ResponseWrapper(localName = "itens")
 	@WebResult(name = "item")
 	public List<Item> getItens(@WebParam(name = "filtros") Filtros filtros) {
