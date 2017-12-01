@@ -10,7 +10,7 @@ public class PublicaEstoqueWS {
 		EstoqueWS implementacaoWS = new EstoqueWS();
 		String URL = "http://localhost:8080/estoquews";
 
-		System.out.println("EstoqueWS rodando: " + URL);
+		System.out.println("EstoqueWS done: " + URL);
 
 		// Associate URL wich implementation
 		Endpoint.publish(URL, implementacaoWS);
