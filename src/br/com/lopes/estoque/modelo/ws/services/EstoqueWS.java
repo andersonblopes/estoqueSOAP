@@ -13,6 +13,7 @@ import br.com.lopes.estoque.modelo.item.Filtro;
 import br.com.lopes.estoque.modelo.item.Filtros;
 import br.com.lopes.estoque.modelo.item.Item;
 import br.com.lopes.estoque.modelo.item.ItemDao;
+import br.com.lopes.estoque.modelo.usuario.TokenUsuario;
 
 @WebService
 public class EstoqueWS {
@@ -35,8 +36,9 @@ public class EstoqueWS {
 
 	@WebMethod(operationName = "AddItem")
 	@WebResult(name = "item")
-	public Item addItem(@WebParam(name = "Item") Item item) {
-		System.out.println("cadastrando um ítem: " + item);
+	public Item addItem(@WebParam(name = "tokenUsuario", header = true) TokenUsuario token,
+			@WebParam(name = "Item") Item item) {
+		System.out.println("cadastrando um ítem: " + item + " Token: " + token);
 		this.dao.cadastrar(item);
 		return item;
 	}
