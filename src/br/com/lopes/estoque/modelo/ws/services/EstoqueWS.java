@@ -35,7 +35,7 @@ public class EstoqueWS {
 
 	@WebMethod(operationName = "AddItem")
 	@WebResult(name = "item")
-	public Item cadastrrItem(Item item) {
+	public Item addItem(@WebParam(name = "Item") Item item) {
 		System.out.println("cadastrando um ítem: " + item);
 		this.dao.cadastrar(item);
 		return item;
