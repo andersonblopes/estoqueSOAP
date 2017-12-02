@@ -9,10 +9,12 @@ import javax.jws.WebService;
 import javax.xml.ws.RequestWrapper;
 import javax.xml.ws.ResponseWrapper;
 
+import br.com.lopes.estoque.modelo.exceptions.AuthorizationException;
 import br.com.lopes.estoque.modelo.item.Filtro;
 import br.com.lopes.estoque.modelo.item.Filtros;
 import br.com.lopes.estoque.modelo.item.Item;
 import br.com.lopes.estoque.modelo.item.ItemDao;
+import br.com.lopes.estoque.modelo.usuario.TokenDao;
 import br.com.lopes.estoque.modelo.usuario.TokenUsuario;
 
 @WebService
@@ -37,8 +39,15 @@ public class EstoqueWS {
 	@WebMethod(operationName = "AddItem")
 	@WebResult(name = "item")
 	public Item addItem(@WebParam(name = "tokenUsuario", header = true) TokenUsuario token,
-			@WebParam(name = "Item") Item item) {
+			@WebParam(name = "Item") Item item) throws AuthorizationException {
 		System.out.println("cadastrando um ítem: " + item + " Token: " + token);
+
+		boolean valid = new TokenDao().ehValido(token);
+
+		if (!valid) {
+			throw new AuthorizationException("Invalid token");
+		}
+
 		this.dao.cadastrar(item);
 		return item;
 	}
