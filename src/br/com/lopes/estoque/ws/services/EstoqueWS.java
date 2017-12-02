@@ -1,11 +1,16 @@
 package br.com.lopes.estoque.ws.services;
 
+import java.io.File;
 import java.util.List;
 
+import javax.jws.Oneway;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebResult;
 import javax.jws.WebService;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
 import javax.xml.ws.RequestWrapper;
 import javax.xml.ws.ResponseWrapper;
 
@@ -53,6 +58,24 @@ public class EstoqueWS {
 
 		this.dao.cadastrar(item);
 		return item;
+	}
+
+	@WebMethod(operationName = "GenerateItemReport")
+	@Oneway // method not response
+	@SuppressWarnings("static-access")
+	public void generateReport() {
+		Item item = new Item.Builder().comCodigo("MEA").comNome("MEAN").comQuantidade(4).comTipo("Livro").build();
+
+		Marshaller marshaller;
+		try {
+			JAXBContext context = JAXBContext.newInstance(Item.class);
+			marshaller = context.createMarshaller();
+			marshaller.setProperty(marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE); // Format output
+			marshaller.marshal(item, System.out); // Show in screen
+			marshaller.marshal(item, new File("item.xml")); // Write to file
+		} catch (JAXBException e) {
+			e.printStackTrace();
+		}
 	}
 
 }
