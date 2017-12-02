@@ -1,4 +1,4 @@
-package br.com.lopes.estoque.modelo.exceptions.fault;
+package br.com.lopes.estoque.exceptions.fault;
 
 import java.util.Date;
 

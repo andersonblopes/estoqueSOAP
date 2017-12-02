@@ -1,4 +1,4 @@
-package br.com.lopes.estoque.modelo.util;
+package br.com.lopes.estoque.util;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

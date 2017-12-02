@@ -1,4 +1,4 @@
-package br.com.lopes.estoque.modelo.ws.services;
+package br.com.lopes.estoque.ws.services;
 
 import java.util.List;
 
@@ -9,14 +9,14 @@ import javax.jws.WebService;
 import javax.xml.ws.RequestWrapper;
 import javax.xml.ws.ResponseWrapper;
 
-import br.com.lopes.estoque.modelo.exceptions.AuthorizationException;
-import br.com.lopes.estoque.modelo.item.Filtro;
-import br.com.lopes.estoque.modelo.item.Filtros;
-import br.com.lopes.estoque.modelo.item.Item;
-import br.com.lopes.estoque.modelo.item.ItemDao;
-import br.com.lopes.estoque.modelo.item.ItemValidador;
-import br.com.lopes.estoque.modelo.usuario.TokenDao;
-import br.com.lopes.estoque.modelo.usuario.TokenUsuario;
+import br.com.lopes.estoque.exceptions.AuthorizationException;
+import br.com.lopes.estoque.item.Filtro;
+import br.com.lopes.estoque.item.Filtros;
+import br.com.lopes.estoque.item.Item;
+import br.com.lopes.estoque.item.ItemDao;
+import br.com.lopes.estoque.item.ItemValidador;
+import br.com.lopes.estoque.usuario.TokenDao;
+import br.com.lopes.estoque.usuario.TokenUsuario;
 
 @WebService
 public class EstoqueWS {

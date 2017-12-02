@@ -1,4 +1,4 @@
-package br.com.lopes.estoque.modelo.item;
+package br.com.lopes.estoque.item;
 
 import javax.xml.bind.annotation.XmlEnumValue;
 

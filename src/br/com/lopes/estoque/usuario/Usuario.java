@@ -1,4 +1,4 @@
-package br.com.lopes.estoque.modelo.usuario;
+package br.com.lopes.estoque.usuario;
 
 public class Usuario {
 

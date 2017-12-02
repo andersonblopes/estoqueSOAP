@@ -1,4 +1,4 @@
-package br.com.lopes.estoque.modelo.usuario;
+package br.com.lopes.estoque.usuario;
 
 import java.util.Date;
 
@@ -7,7 +7,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
-import br.com.lopes.estoque.modelo.util.DateAdapter;
+import br.com.lopes.estoque.util.DateAdapter;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 public class TokenUsuario {

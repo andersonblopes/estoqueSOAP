@@ -1,10 +1,10 @@
-package br.com.lopes.estoque.modelo.exceptions;
+package br.com.lopes.estoque.exceptions;
 
 import java.util.Date;
 
 import javax.xml.ws.WebFault;
 
-import br.com.lopes.estoque.modelo.exceptions.fault.InfoFault;
+import br.com.lopes.estoque.exceptions.fault.InfoFault;
 
 @WebFault(name = "AuthorizationFault")
 public class AuthorizationException extends Exception {
