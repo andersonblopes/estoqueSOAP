@@ -14,6 +14,7 @@ import br.com.lopes.estoque.modelo.item.Filtro;
 import br.com.lopes.estoque.modelo.item.Filtros;
 import br.com.lopes.estoque.modelo.item.Item;
 import br.com.lopes.estoque.modelo.item.ItemDao;
+import br.com.lopes.estoque.modelo.item.ItemValidador;
 import br.com.lopes.estoque.modelo.usuario.TokenDao;
 import br.com.lopes.estoque.modelo.usuario.TokenUsuario;
 
@@ -45,8 +46,10 @@ public class EstoqueWS {
 		boolean valid = new TokenDao().ehValido(token);
 
 		if (!valid) {
-			throw new AuthorizationException("Invalid Authorization");
+			throw new AuthorizationException("Access denied!");
 		}
+
+		new ItemValidador(item).validate();
 
 		this.dao.cadastrar(item);
 		return item;
