@@ -19,7 +19,7 @@ public class EstoqueWS {
 
 	private ItemDao dao = new ItemDao();
 
-	@WebMethod(operationName = "allItens")
+	@WebMethod(operationName = "AllItens")
 	@RequestWrapper(localName = "listItens")
 	@ResponseWrapper(localName = "itens")
 	@WebResult(name = "item")
@@ -31,6 +31,12 @@ public class EstoqueWS {
 
 		List<Item> itensResultado = dao.todosItens(lista);
 		return itensResultado;
+	}
+
+	public Item cadastrrItem(Item item) {
+		System.out.println("cadastrando um ítem: " + item);
+		this.dao.cadastrar(item);
+		return item;
 	}
 
 }
