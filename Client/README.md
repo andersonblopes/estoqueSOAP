@@ -1,4 +1,4 @@
-# estoqueSOAP
+# EstoqueWS-web
 Project to study and pratice SOAP service use on course Alura
 
 Command to generate wsdl:
