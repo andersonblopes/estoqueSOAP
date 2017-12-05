@@ -18,7 +18,7 @@ import javax.xml.ws.WebServiceFeature;
  * 
  */
 @WebServiceClient(name = "EstoqueWS", targetNamespace = "http://ws.estoque.caelum.com.br/", wsdlLocation = "http://localhost:8080/EstoqueWS-web/EstoqueWS?wsdl")
-public class EstoqueWS_Service
+public class EstoqueWSService
     extends Service
 {
 
@@ -38,27 +38,27 @@ public class EstoqueWS_Service
         ESTOQUEWS_EXCEPTION = e;
     }
 
-    public EstoqueWS_Service() {
+    public EstoqueWSService() {
         super(__getWsdlLocation(), ESTOQUEWS_QNAME);
     }
 
-    public EstoqueWS_Service(WebServiceFeature... features) {
+    public EstoqueWSService(WebServiceFeature... features) {
         super(__getWsdlLocation(), ESTOQUEWS_QNAME, features);
     }
 
-    public EstoqueWS_Service(URL wsdlLocation) {
+    public EstoqueWSService(URL wsdlLocation) {
         super(wsdlLocation, ESTOQUEWS_QNAME);
     }
 
-    public EstoqueWS_Service(URL wsdlLocation, WebServiceFeature... features) {
+    public EstoqueWSService(URL wsdlLocation, WebServiceFeature... features) {
         super(wsdlLocation, ESTOQUEWS_QNAME, features);
     }
 
-    public EstoqueWS_Service(URL wsdlLocation, QName serviceName) {
+    public EstoqueWSService(URL wsdlLocation, QName serviceName) {
         super(wsdlLocation, serviceName);
     }
 
-    public EstoqueWS_Service(URL wsdlLocation, QName serviceName, WebServiceFeature... features) {
+    public EstoqueWSService(URL wsdlLocation, QName serviceName, WebServiceFeature... features) {
         super(wsdlLocation, serviceName, features);
     }
 
