@@ -12,3 +12,4 @@ wsimport -s src -p br.com.caelum.estoque.cliente    http://localhost:8080/estoqu
 
 
 http://www.correios.com.br/webservices/ - WebService Correios
+wsdl: http://ws.correios.com.br/calculador/CalcPrecoPrazo.asmx?WSDL
