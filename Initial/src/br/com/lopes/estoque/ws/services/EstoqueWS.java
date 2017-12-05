@@ -8,6 +8,10 @@ import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebResult;
 import javax.jws.WebService;
+import javax.jws.soap.SOAPBinding;
+import javax.jws.soap.SOAPBinding.ParameterStyle;
+import javax.jws.soap.SOAPBinding.Style;
+import javax.jws.soap.SOAPBinding.Use;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
@@ -24,6 +28,7 @@ import br.com.lopes.estoque.usuario.TokenDao;
 import br.com.lopes.estoque.usuario.TokenUsuario;
 
 @WebService
+@SOAPBinding(style = Style.DOCUMENT, use = Use.LITERAL, parameterStyle = ParameterStyle.WRAPPED)
 public class EstoqueWS {
 
 	private ItemDao dao = new ItemDao();
